@@ -139,7 +139,7 @@ func Debug(src string, msg string) {
 	if !ensure.NotNil(global) {
 		return
 	}
-	if 0 < global.Level {
+	if DEBUG < global.Level {
 		return
 	}
 	global.chLog <- fill(0, src, msg)
@@ -154,7 +154,7 @@ func Info(src string, msg string) {
 	if !ensure.NotNil(global) {
 		return
 	}
-	if 1 < global.Level {
+	if INFO < global.Level {
 		return
 	}
 	global.chLog <- fill(1, src, msg)
@@ -169,7 +169,7 @@ func Warn(src string, msg string) {
 	if !ensure.NotNil(global) {
 		return
 	}
-	if 2 < global.Level {
+	if WARN < global.Level {
 		return
 	}
 	global.chLog <- fill(2, src, msg)
@@ -184,7 +184,7 @@ func Error(src string, msg string) {
 	if !ensure.NotNil(global) {
 		return
 	}
-	if 3 < global.Level {
+	if ERROR < global.Level {
 		return
 	}
 	global.chLog <- fill(3, src, msg)
@@ -199,7 +199,7 @@ func Fatal(src string, msg string) {
 	if !ensure.NotNil(global) {
 		return
 	}
-	if 4 < global.Level {
+	if FATAL < global.Level {
 		return
 	}
 	global.chLog <- fill(4, src, msg)
